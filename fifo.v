@@ -1,5 +1,5 @@
 //***********************************************************
-//	Author: 	Anisa Qazi
+//	Author: 	Anisa Qazi,Naveena, Varsha
 //	Developed on:	5-Nov-2016
 //	Module:		Generic FIFO block (To be used to 
 //			store LFSR outputs or Primality 
@@ -106,3 +106,4 @@ assign fifo_full = data_count[4];
 assign fifo_empty = !(|data_count);
 
 endmodule
+

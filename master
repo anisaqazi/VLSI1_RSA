@@ -1,0 +1,16 @@
+// libraries
++libext+.v+
+// NOTE: should be the path below, but verilog has hardcoded maximum
+// path length restriction, need to make local link to $ACSCADE/models/verilog.
+-y models2
+
+pt_exp.v
+encryption_key.v 
+euclidean_loop.v 
+fifo.v
+lfsr.v
+modexp1.v
+primality_tester.v
+RSA_decryptor.v
+RSA_encryptor.v
+test_RSA.v

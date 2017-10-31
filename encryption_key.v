@@ -2,6 +2,7 @@ module encryption_key(	clk,
 			reset_n,
 			phi_n,
 			e,
+			d,
 			start_compute,
 			done_compute	
 		);
@@ -12,6 +13,7 @@ input	[63:0]	phi_n;
 input		start_compute;
 output	[63:0]	e;
 output		done_compute;
+output	[63:0]	d;
 
 wire 		clk;
 wire		reset_n;
@@ -94,8 +96,9 @@ begin
 		if(next_state==IDLE)
 		begin
 			done_compute 	<= 0;
-			e		<= 'd1;
 			num_cycles	<= 'd0;	
+			if(start_compute)
+				e		<= 'd1;
 		end	
 		else if(next_state==COMPUTE_INITIALIZE)
 		begin
