@@ -60,7 +60,6 @@ begin
   cnt <= 0;
   rnd_valid<=1'b0;
   data_count<='d0;
-  //random_done<=32'hFFFFFFFF;
  end
 
  else
@@ -89,12 +88,6 @@ begin
   random_next = {random[30:0], fb}; //shift left the xor'd every posedge clk
   cnt_next = cnt + 1;
 
-/* if (cnt == 32)
- begin
-  cnt = 0;
-  random_done = random; //assign the random number to output after 32 shifts
- end
-  */
 end
 
 

@@ -51,20 +51,16 @@ always @(*)
 begin
 	case(state)
 		IDLE:			begin
-						//done_compute = 0;
-						//e	= 'd1;
 						if(start_compute)
 							next_state=COMPUTE_INITIALIZE;
 						else
 							next_state=IDLE;
 					end
 		COMPUTE_INITIALIZE:	begin
-						//anisa check this e	= e + 'd2;
 						next_state=COMPUTE;
 				 
 					end
 		COMPUTE:		begin
-						//eucli_loop_start='d1;
 						if(eucli_loop_done)
 						begin
 							if((gcd != 'd1)||(d[63]))
@@ -74,8 +70,6 @@ begin
 						end
 					end
 		END:			begin
-						//done_compute = 1;
-						//eucli_loop_start='d0;
 						if(start_compute==1'b0)
 							next_state=IDLE;	
 						

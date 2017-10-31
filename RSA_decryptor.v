@@ -76,10 +76,6 @@ begin
 		else if(start_primality && ~empty)
 			start_primality <= 1'b0;
 		
-		//if(~empty1 && count_prime_rd==2'b00)
-		//begin
-		//	read_fifo2<=1'b1;
-		//end
 		
 		if(read_fifo2_del&&count_prime_rd==2'b00)
 		begin
@@ -109,8 +105,7 @@ fifo fifo1 ( .clk(clk),
 	    .reset_n(rst),
 	    .data_in(random),
 	    .write(write_fifo),
-	    //.write(1'b1),
-	    .read(~empty && start_primality),// what should be the read signal
+	    .read(~empty && start_primality),
 	    .fifo_full(full),
 	    .fifo_empty(empty),
 	    .data_out(fifo_out)
@@ -130,7 +125,6 @@ fifo fifo2 ( .clk(clk),
 	    .data_in(prime_out),
 	    .write(doneprimality && is_prime),
 	    .read(read_fifo2),
-	    //.read(~empty1 && ~count_prime_rd[1]),
 	    .fifo_full(full1),
 	    .fifo_empty(empty1),
 	    .data_out(fifo_out1)

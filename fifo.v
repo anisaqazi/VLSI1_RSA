@@ -48,7 +48,6 @@ begin
 		
 end
 
-//always @(posedge clk or negedge reset_n)
 always @(posedge clk)
 begin
 	if(~reset_n)
@@ -59,9 +58,7 @@ begin
 end
 
 
-//anisa assign data_out=fifo_data[rd_ptr];
 
-//anisa
 always @(posedge clk  or negedge reset_n)
 begin
 	if(~reset_n)
@@ -75,7 +72,6 @@ begin
 	end
 end
 	
-//always @(posedge clk or negedge reset_n)
 always @(posedge clk)
 begin
 	if(~reset_n)
@@ -86,7 +82,6 @@ begin
 end
 
 
-//always @(posedge clk or negedge reset_n)
 always @(posedge clk)
 begin
 	if(~reset_n)
